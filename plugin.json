@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "meeting-ai",
+  "version": "1.0.0",
+  "description": "Record meetings, read and edit notes and transcripts, combine meetings into recaps, export, share, and create Visual Notes with Meeting.ai.",
+  "author": {
+    "name": "Meeting.ai",
+    "email": "support@meeting.ai",
+    "url": "https://meeting.ai"
+  },
+  "homepage": "https://meeting.ai",
+  "repository": "https://github.com/meeting-ai/skills",
+  "license": "Apache-2.0",
+  "keywords": ["meetings", "meeting-notes", "transcripts", "notetaker", "visual-notes", "productivity", "mcp"],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "meeting-ai": {
+          "trust": "untrusted"
+        }
+      }
+    }
+  }
+}
