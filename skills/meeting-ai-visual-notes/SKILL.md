@@ -48,7 +48,7 @@ contrast, creates a new standalone image in Drive and does not touch the meeting
 
 ## Cost and repeats
 
-`recipe_visual_note` always charges and saves to the active workspace. It does not accept
+`recipe_visual_note` always saves to the active workspace. It does not accept
 `workspace_id`. Check the active workspace with `workspace_list` first. If the content comes
 from a different workspace, ask the user before you change the active workspace.
 
