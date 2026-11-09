@@ -94,6 +94,11 @@ Tools default to this connection's active workspace. `workspace_list` shows all 
 `workspace_set_active` changes the default for this connection only. Pass `workspace_id` on
 a single call for a one-off.
 
+`media_image_gen`, `media_audio_gen`, and `recipe_visual_note` do not accept `workspace_id`.
+They always charge and save to the active workspace. Before you call one, check the active
+workspace with `workspace_list`. If the content comes from a different workspace, ask the user
+before you change the active workspace.
+
 ## Style
 
 Use product words: workspace, meeting, notes, transcript, Drive, Visual Note. Give titles and

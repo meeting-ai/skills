@@ -87,20 +87,26 @@ connected to?"
 - **Your data goes to Meeting.ai.** Every tool call goes to `mcp.meeting.ai` and acts on your
   Meeting.ai account, with your own role in each workspace. The server supplies the tools at
   runtime, so a pinned commit of this package does not cover them.
+- **Some content goes to AI providers.** Image, audio, and Visual Note generation send the text
+  you supply to third-party AI providers, such as Google for images.
+- **Meeting.ai can record tool usage.** The server can record each tool call for product
+  analytics: the tool name, the outcome, and your user, workspace, connection, and client
+  identifiers. This is separate from the package, and the package has no setting for it.
 - **Some actions cost coins.** Recording, exporting, Visual Notes, and image and audio
   generation use your Meeting.ai subscription or coins. The agent tells you before it does
   one. If you have no active subscription or coins, the tool stops with an error.
 - **The notetaker is visible.** It joins a live call as a participant named Meeting.ai.
 - **Share links can be public.** A share link has a PIN by default. The agent removes the PIN
   only if you ask.
-- **Hermes asks first.** The Hermes package marks the server as untrusted. Hermes asks you
-  before each tool that the server does not mark read-only, and refuses those tools in
-  unattended runs.
+- **Hermes asks first by default.** The Hermes package marks the server as untrusted. By
+  default, Hermes asks you before each tool that the server does not mark read-only. An
+  approval that you saved, a Hermes setting that turns off approvals, or your own configuration
+  for a server with this name can change this.
 - **Hermes sign-in uses `mcp-remote`.** The package runs the pinned `mcp-remote@0.15.2` through
   `npx`, which downloads it from npm on first use. It opens your browser and a local callback
   port, and stores the sign-in tokens in `~/.mcp-auth`.
-- **This package is configuration and instructions only.** It has no code, no binary, no
-  telemetry, and no self-updater.
+- **This package is configuration and instructions only.** The package itself has no code, no
+  binary, no telemetry, and no self-updater.
 
 To end the connection, revoke it from Connected Apps in the Meeting.ai web app. Revocation
 takes effect immediately.

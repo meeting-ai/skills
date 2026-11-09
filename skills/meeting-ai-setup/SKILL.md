@@ -87,7 +87,8 @@ recording in the web app before exploring.
 
 Use `workspace_list` to show available workspaces. Use `workspace_set_active` only when the
 user wants to change this connection's default. This changes only this connection and never
-moves any data. Use `workspace_id` for a one-off call.
+moves any data. Use `workspace_id` for a one-off call. `media_image_gen`, `media_audio_gen`, and
+`recipe_visual_note` do not accept it: they always charge and save to the active workspace.
 
 ## Common problems
 

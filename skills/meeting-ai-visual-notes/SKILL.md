@@ -48,6 +48,10 @@ contrast, creates a new standalone image in Drive and does not touch the meeting
 
 ## Cost and repeats
 
+`recipe_visual_note` always charges and saves to the active workspace. It does not accept
+`workspace_id`. Check the active workspace with `workspace_list` first. If the content comes
+from a different workspace, ask the user before you change the active workspace.
+
 Every call spends the user's coins and creates a new image. Confirm before generating, and
 do not regenerate to "try again" unless the user asks. If the account has no coins or no
 active subscription, the tool returns a clear error. Relay the message and stop.
