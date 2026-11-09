@@ -34,6 +34,9 @@ Start a new session. The first time the server starts, your browser opens the Me
 sign-in page. Sign in and approve the connection. If the tools do not appear after sign-in,
 run `/reload-mcp`.
 
+You have about 55 seconds to sign in and approve. If the time runs out, start a new session to
+try again.
+
 ### Claude Code
 
 Use the Claude plugin. It installs the skills and connects the server:
