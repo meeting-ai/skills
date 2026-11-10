@@ -1,7 +1,5 @@
 # Meeting.ai skills for AI agents
 
-![Meeting.ai in a meeting room, with the Meeting.ai notetaker on the table](assets/banner.webp)
-
 Meeting.ai is the AI that works before, during, and after your meeting. These skills teach
 your AI agent how to use it. Ask your agent to join a call and take notes, find what was
 decided, rewrite the notes, recap a week of meetings, or draw a one-page Visual Note.
@@ -88,15 +86,18 @@ connected to?"
   Meeting.ai account, with your own role in each workspace. The server supplies the tools at
   runtime, so a pinned commit of this package does not cover them.
 - **Some content goes to AI providers.** Image, audio, and Visual Note generation send the text
-  you supply to third-party AI providers, such as Google for images.
+  you supply to third-party AI providers.
 - **Meeting.ai can record tool usage.** The server can record each tool call for product
   analytics: the tool name, the outcome, and your user, workspace, connection, and client
   identifiers. This is separate from the package, and the package has no setting for it.
-- **Some actions cost coins.** Recording, exporting, Visual Notes, and image and audio
-  generation use your Meeting.ai subscription or coins. The agent tells you before it does
+- **Some actions cost coins.** Recording, Visual Notes, and image and audio generation
+  use your Meeting.ai subscription or coins. The agent tells you before it does
   one. If you have no active subscription or coins, the tool stops with an error.
+- **Exports use Drive storage.** An export saves a file to your Drive and costs no coins. It
+  stops with an error when the workspace has unpaid storage.
 - **The notetaker is visible.** It joins a live call as a participant named Meeting.ai.
-- **Share links can be public.** A share link has a PIN by default. The agent removes the PIN
+- **Share links can be public.** A share link shows the notes and, by default, the transcript.
+  It has a PIN by default. The agent removes the PIN
   only if you ask.
 - **Hermes asks first by default.** The Hermes package marks the server as untrusted. By
   default, Hermes asks you before each tool that the server does not mark read-only. An

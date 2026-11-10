@@ -54,7 +54,8 @@ that record. The recap belongs in the reply or in a Visual Note, not inside a me
 
 ## Sharing the result
 
-`meetings_share` turns on a public link for one meeting. It is PIN-protected by default;
+`meetings_share` turns on a public link for one meeting. The link shows the notes and, by
+default, the transcript. It is PIN-protected by default;
 only pass `require_pin: false` when the user asks for an open link. Removing an existing
 PIN also requires `remove_existing_pin: true` and the owner's explicit request. Sharing by email is done
-in the web app.
+in the web app. When the reply has a `pin`, give it to the user with the link.

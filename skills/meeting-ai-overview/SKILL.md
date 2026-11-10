@@ -10,9 +10,9 @@ compatibility: Requires the Meeting.ai MCP server (https://mcp.meeting.ai/mcp)
 > available in this session, stop and follow the `meeting-ai-setup` skill. Do not guess or invent
 > results. Tool names can carry a client prefix, for example `mcp__meeting-ai__workspace_list`.
 
-Meeting.ai is the AI that works before, during, and after your meeting. It prepares decks
-and research before, records and writes the notes during, and turns what was actually said
-into minutes, documents, spreadsheets, follow-up decks, audio briefs, and Visual Notes after.
+Meeting.ai records meetings and writes the notes. Through these tools the assistant finds,
+reads, edits, exports, and shares those notes, and creates Visual Notes, images, and audio.
+Decks, research, and spreadsheets are made in the Meeting.ai app, not through these tools.
 
 Through this connection the assistant works on the user's meetings for them. When the user asks what
 they can do, explain these in plain words:
@@ -58,7 +58,9 @@ meeting must be finished.
 
 ## Sharing and tags
 
-- `meetings_share` turns on the public link, PIN-protected by default. Pass
+- `meetings_share` turns on the public link, PIN-protected by default. The link shows the
+  notes and, by default, the transcript. Tell the user this before you share. When the reply
+  has a `pin`, give the user the PIN with the link. Pass
   `require_pin: false` only on explicit request. Removing an existing PIN also requires
   `remove_existing_pin: true` and the owner's explicit request. Email sharing lives in the web app.
 - `meetings_tag` and `drive_tag` apply tags that already exist. They never create tags. An
@@ -72,7 +74,8 @@ contact's meetings.
 
 ## Drive
 
-`drive_search` lists or searches files with tags, size, owner, and an `etag`. `drive_rename`
+`drive_search` lists or searches files with tags, size, owner, and an `etag`. Give the user
+the file name, not the returned link: the file page is not live yet. `drive_rename`
 renames a file the user owns; pass the `etag` as `if_match` so a concurrent change is refused
 rather than overwritten. Uploading, deleting, and sharing files stay in the web app.
 
@@ -87,6 +90,9 @@ create a new file every call. Confirm before repeating.
 Editing notes, sharing, stopping a recording, and renaming Drive files are **owner only**.
 Check `role` first and say so when the user is not the owner. Tagging works on any meeting
 the user can see.
+
+For a meeting that someone else owns, the owner's download settings decide whether its notes
+or transcript can be exported. A refusal there is not a bug. Tell the user.
 
 ## Workspaces
 

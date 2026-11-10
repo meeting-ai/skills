@@ -55,7 +55,8 @@ Check when the user asks, or suggest they come back after the meeting ends.
 
 `meetings_stop` makes the notetaker leave a live call and finalises the meeting from what was
 captured so far. Only the meeting owner can do this, and it only works while the notetaker
-is in the call. Recordings from uploaded files are not stopped this way.
+is in the call. Meetings from an uploaded file or recorded in the Meeting.ai mobile or web app
+are not stopped this way.
 
 ## Other ways to record, outside the assistant
 
