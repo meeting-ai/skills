@@ -93,8 +93,8 @@ connected to?"
 - **Some actions cost coins.** Recording, Visual Notes, and image and audio generation
   use your Meeting.ai subscription or coins. The agent tells you before it does
   one. If you have no active subscription or coins, the tool stops with an error.
-- **Exports use Drive storage.** An export saves a file to your Drive and costs no coins. It
-  stops with an error when the workspace has unpaid storage.
+- **Exports use Drive storage.** An export saves a file to your Drive and costs no coins. A
+  storage-debt limit can refuse an export.
 - **The notetaker is visible.** It joins a live call as a participant named Meeting.ai.
 - **Share links can be public.** A share link shows the notes and, by default, the transcript.
   It has a PIN by default. The agent removes the PIN
