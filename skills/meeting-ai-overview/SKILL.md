@@ -1,6 +1,6 @@
 ---
 name: meeting-ai-overview
-description: Use when the user asks what Meeting.ai can do, or asks about their meetings, notes, transcripts, action items, contacts, Drive files, exports, tags, sharing, or workspaces in Meeting.ai. Covers the everyday reading tools plus export, media generation, contacts, Drive, and workspace switching. For recording a meeting, editing notes, or Visual Notes, the dedicated skills go deeper.
+description: Use when the user asks what Meeting.ai can do, wants a recap of several meetings, or asks about their meetings, notes, transcripts, action items, contacts, Drive files, exports, tags, sharing, or workspaces in Meeting.ai. Covers the everyday reading tools plus export, media generation, contacts, Drive, and workspace switching. For recording a meeting, editing notes, or Visual Notes, the dedicated skills go deeper.
 compatibility: Requires the Meeting.ai MCP server (https://mcp.meeting.ai/mcp)
 ---
 
@@ -21,8 +21,9 @@ they can do, explain these in plain words:
   transcribe a Google Drive recording. See the `meeting-ai-record-meeting` skill.
 - **Find and read meetings.** Search by keyword or date, read the notes, search or read the
   transcript.
-- **Edit notes and combine meetings.** Rewrite a meeting's notes, or turn several meetings
-  into one recap. See the `meeting-ai-edit-notes` skill.
+- **Edit notes.** Rewrite or rename an existing meeting's notes. See the `meeting-ai-edit-notes`
+  skill.
+- **Recap several meetings.** Read several meetings and write one summary in the chat.
 - **Visual Notes.** A one-page visual summary from a meeting or any topic. See the
   `meeting-ai-visual-notes` skill.
 - **Export.** PDF or Markdown to the user's Drive.
@@ -46,6 +47,24 @@ https://meeting.ai/mcp.
    read it all, following `next_cursor` until it is `null`.
 
 Notes are a summary. For exact wording, numbers, or names, read the transcript.
+
+## Recapping several meetings
+
+This is the workflow for "summarize this week's meetings", "recap the Acme project", or
+"what did we decide across the three planning sessions". It only reads meetings.
+
+1. Find the meetings with `meetings_search`. Use a keyword for a project or client, or a
+   `start_date` and `end_date` for a period. Confirm the list with the user.
+2. Read each meeting with `meetings_notes`. For decisions, numbers, or quotes, check the
+   transcript with `meetings_transcript_search`.
+3. Write the recap: what happened, decisions made, open questions, and action items with
+   owners, each item naming the meeting it came from.
+4. Reply with the recap in the chat. That is the deliverable.
+5. Then offer to turn it into a Visual Note with `recipe_visual_note`. See the
+   `meeting-ai-visual-notes` skill.
+
+Never write a recap into one of the source meetings. Each meeting's notes are the record of
+that meeting.
 
 ## Exporting
 

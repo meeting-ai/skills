@@ -74,10 +74,10 @@ connected to?"
 
 | Skill | Use it to |
 |---|---|
-| `meeting-ai-overview` | Find and read meetings, notes, and transcripts. Export, share, tag, and work with contacts, Drive files, images, and audio. |
+| `meeting-ai-overview` | Find and read meetings, notes, and transcripts. Recap several meetings in the chat. Export, share, tag, and work with contacts, Drive files, images, and audio. |
 | `meeting-ai-setup` | Connect the server, sign in, fix connection problems, and change workspace. |
 | `meeting-ai-record-meeting` | Send the notetaker to Zoom, Google Meet, or Teams. Transcribe a Google Drive recording. |
-| `meeting-ai-edit-notes` | Rewrite the notes of a meeting. Combine several meetings into one recap. |
+| `meeting-ai-edit-notes` | Rewrite or rename the notes of an existing meeting. |
 | `meeting-ai-visual-notes` | Create a one-page summary image from a meeting, several meetings, or any topic. |
 
 ## Before you install
