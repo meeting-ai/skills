@@ -46,8 +46,22 @@ hermes plugins install meeting-ai/skills --no-enable
 hermes plugins enable meeting-ai
 ```
 
-Then the user starts a new session. Hermes needs Node.js with `npx` for this package. If the
-tools do not appear after sign-in, the user runs `/reload-mcp`.
+Recommended: Hermes does the sign-in itself. Ask the user before you change the file, then add
+this entry to `~/.hermes/config.yaml`:
+
+```yaml
+mcp_servers:
+  meeting-ai:
+    url: https://mcp.meeting.ai/mcp
+    auth: oauth
+    trust: untrusted
+```
+
+Then the user runs `hermes mcp login meeting-ai` and approves in the browser. Keep
+`trust: untrusted`, so Hermes still asks before tools that change something. Without this entry,
+the package signs in through `mcp-remote`, which needs Node.js 20.18.1 or later with `npx` and
+allows about 55 seconds to sign in. Then the user starts a new session. If the tools do not
+appear, the user runs `/reload-mcp`.
 
 **Cursor and other agents**
 

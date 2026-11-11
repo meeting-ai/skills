@@ -20,20 +20,34 @@ decided, rewrite the notes, recap a week of meetings, or draw a one-page Visual 
 
 ### Hermes Agent
 
-This package installs the skills and connects the server. You need Node.js with `npx` on your
-`PATH`.
+1. Install the package. It adds the skills and connects the server:
 
-```bash
-hermes plugins install meeting-ai/skills --no-enable
-hermes plugins enable meeting-ai
-```
+   ```bash
+   hermes plugins install meeting-ai/skills --no-enable
+   hermes plugins enable meeting-ai
+   ```
 
-Start a new session. The first time the server starts, your browser opens the Meeting.ai
-sign-in page. Sign in and approve the connection. If the tools do not appear after sign-in,
-run `/reload-mcp`.
+2. Recommended: let Hermes do the sign-in. Add this entry to `~/.hermes/config.yaml`:
 
-You have about 55 seconds to sign in and approve. If the time runs out, start a new session to
-try again.
+   ```yaml
+   mcp_servers:
+     meeting-ai:
+       url: https://mcp.meeting.ai/mcp
+       auth: oauth
+       trust: untrusted
+   ```
+
+   Then run `hermes mcp login meeting-ai`, sign in on the Meeting.ai page that opens, and
+   approve the connection. This entry replaces the package's own sign-in. Hermes stores and
+   refreshes the sign-in itself, you do not need Node.js, and you have more time to sign in.
+   Keep `trust: untrusted`, so that Hermes still asks before each tool that changes something.
+
+3. Start a new session. If the tools do not appear, run `/reload-mcp`.
+
+**Without step 2**, the package signs in through `mcp-remote`. You need Node.js 20.18.1 or
+later with `npx` on your `PATH`. The first time the server starts, your browser opens the
+Meeting.ai sign-in page. You have about 55 seconds to sign in and approve. If the time runs
+out, start a new session to try again.
 
 ### Claude Code
 
@@ -103,8 +117,8 @@ connected to?"
   default, Hermes asks you before each tool that the server does not mark read-only. An
   approval that you saved, a Hermes setting that turns off approvals, or your own configuration
   for a server with this name can change this.
-- **Hermes sign-in uses `mcp-remote`.** The package runs the pinned `mcp-remote@0.15.2` through
-  `npx`, which downloads it from npm on first use. It opens your browser and a local callback
+- **Without the config entry, Hermes sign-in uses `mcp-remote`.** The package runs the pinned
+  `mcp-remote@0.15.2` through `npx`, which downloads it from npm on first use. It opens your browser and a local callback
   port, and stores the sign-in tokens in `~/.mcp-auth`.
 - **This package is configuration and instructions only.** The package itself has no code, no
   binary, no telemetry, and no self-updater.

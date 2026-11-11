@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "meeting-ai",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Record meetings, read and edit notes and transcripts, combine meetings into recaps, export, share, and create Visual Notes with Meeting.ai.",
   "author": {
     "name": "Meeting.ai",
