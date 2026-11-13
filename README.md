@@ -123,7 +123,7 @@ connected to?"
 - **This package is configuration and instructions only.** The package itself has no code, no
   binary, no telemetry, and no self-updater.
 
-To end the connection, revoke it from Connected Apps in the Meeting.ai web app. Revocation
+To end the connection, revoke it in the Meeting.ai web app under Settings › MCP & CLI. Revocation
 takes effect immediately.
 
 ## Links
