@@ -107,6 +107,8 @@ connected to?"
 - **Some actions cost coins.** Recording, Visual Notes, and image and audio generation
   use your Meeting.ai subscription or coins. The agent tells you before it does
   one. If you have no active subscription or coins, the tool stops with an error.
+  A long generation can continue after the agent's reply. It can be charged, and Meeting.ai
+  saves the file to your Drive when it is ready. A Drive limit can stop that save.
 - **Exports use Drive storage.** An export saves a file to your Drive and costs no coins. A
   storage-debt limit can refuse an export.
 - **The notetaker is visible.** It joins a live call as a participant named Meeting.ai.
