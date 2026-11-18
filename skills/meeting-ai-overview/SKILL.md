@@ -120,7 +120,10 @@ that starts and charges a new generation. Do one of these:
 Errors from `media_job_status`:
 
 - `NOT_FOUND`: this account has no job with this `job_id`, or the result expired.
-- `GENERATION_DECLINED`: no file was made. Tell the user. Generate again only if the user asks.
+- `GENERATION_DECLINED`: no usable file was made. A job that failed is not charged, but a job that
+  finished without usable media is charged. Give the user the message from the server, which says
+  whether the call was charged. Do not tell the user that nothing was charged unless the message
+  says so. Generate again only if the user asks.
 - `DELIVERY_FAILED`: see the tool errors in Style.
 
 ## Permissions
