@@ -117,7 +117,7 @@ moves any data. Use `workspace_id` for a one-off call. `media_image_gen`, `media
   operations. The user manages their plan in the Meeting.ai web app.
 - **Tools work but return no meetings.** Check the active workspace with `workspace_list`. The
   user may have meetings in a different workspace, or no meetings yet.
-- **Disconnecting.** The user revokes the grant from Connected Apps in the Meeting.ai web app.
+- **Disconnecting.** The user revokes the grant in the Meeting.ai web app under Settings › MCP & CLI.
   Revocation takes effect immediately. Removing the server or plugin locally does not prove
   that the grant was revoked.
 
