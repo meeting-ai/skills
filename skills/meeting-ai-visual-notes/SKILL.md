@@ -28,8 +28,8 @@ meeting, any set of meetings, or any topic at all.
 
    A long drawing can return the tool error `JOB_PENDING` with `data.job_id`. The drawing
    continues and can be charged. Do not call `recipe_visual_note` again. Call `media_job_status`
-   with the `job_id` to get the image and its link, or tell the user that Meeting.ai saves it
-   to Drive when it is ready. If `media_job_status` returns `JOB_PENDING` again, wait before
+   with the `job_id` to get the Drive link (and the image, when it is returned; a missing image
+   is not a problem), or tell the user that Meeting.ai saves it to Drive when it is ready. If `media_job_status` returns `JOB_PENDING` again, wait before
    you call it again.
 
 ## From several meetings
